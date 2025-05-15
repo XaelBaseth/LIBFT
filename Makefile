@@ -57,6 +57,9 @@ FTPRINTF	=	ft_printf ft_printf_utils ft_printf_hex ft_printf_ptr ft_printf_unsig
 FTGC_DIR	=	ft_gc_alloc/
 FTGC		=	ft_gc_alloc ft_gc_alloc_lst
 
+FTPING_DIR	=	ft_ping/
+FTPING		=	check_args icmp rtts ft_ping init utils
+
 SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
 SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
@@ -66,6 +69,7 @@ SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
 SRC_FILES+=$(addprefix $(GNL_DIR),$(GNL))
 SRC_FILES+=$(addprefix $(FTPRINTF_DIR),$(FTPRINTF))
 SRC_FILES+=$(addprefix $(FTGC_DIR), $(FTGC))
+SRC_FILES+=$(addprefix $(FTPING_DIR), $(FTPING))
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -95,6 +99,7 @@ $(OBJF):
 			@mkdir -p $(OBJ_DIR)$(GNL_DIR)
 			@mkdir -p $(OBJ_DIR)$(FTPRINTF_DIR)
 			@mkdir -p $(OBJ_DIR)$(FTGC_DIR)
+			@mkdir -p $(OBJ_DIR)$(FTPING_DIR)
 			@touch $(OBJF)
 
 clean:
